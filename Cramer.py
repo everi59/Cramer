@@ -19,6 +19,9 @@ def cramer_function(a, b):
     return solutions
 
 
-a = np.array([[1, 2, 3], [0, 1-2j, 4], [5, 6, 0]], dtype=complex)
+a = np.array([[1, 2, 3+1j], [0, 1-2j, 4], [5, 6, 0]], dtype=complex)
 b = np.array([6+4j, 4, 3], dtype=complex)
-print(cramer_function(a, b))
+try:
+    print(cramer_function(a, b))
+except ValueError as e:
+    print(e)
